@@ -16,4 +16,10 @@ public class ProgramaPersonalizado extends ProgramaFormacion {
 
     }
 
+    public ProgramaPersonalizado(int sesionTutor, String idiomaRequerido, String objetivos) {
+        super(codigo, idioma, descripcion, duracionMeses,valorMensual, estado);
+        this.sesionTutor = sesionTutor;
+        this.idiomaRequerido = idiomaRequerido;
+        this.objetivos = objetivos;
+    }
 }

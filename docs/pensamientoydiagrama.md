@@ -1,6 +1,7 @@
 # Pensamiento computacional
 
 Integrantes: Juan Diego Quitian Rengifo (C.C.1090275278) – Andres David Santafe Lopez (C.C. 1023378835 )
+Grupo 01D
 
 ¿Que se solicita finalmente? 
 

@@ -1,4 +1,4 @@
-# Pensamiento computacional Abstraccion 
+# Pensamiento computacional
 
 Integrantes: Juan Diego Quitian Rengifo (C.C.1090275278) – Andres David Santafe Lopez (C.C. 1023378835 )
 

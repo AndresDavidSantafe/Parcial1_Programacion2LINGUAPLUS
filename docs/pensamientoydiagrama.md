@@ -128,5 +128,6 @@ RF-009: consultar historial de pagos según la fecha RF-0010: consultar un estud
 |---|---|---|---|---|
 |Los programas<br>presenciales se<br>entregan<br>con material impreso y<br>carné físico; los<br>programas virtuales,<br>con licencia de acceso<br>a la plataforma y<br>carné digital. Estas<br>combinaciones no se<br>pueden mezclar:|Busca no<br>mezclar<br>ambos<br>conceptos|Abstract<br>factory|ProgramaFormacion,<br>ProgramaPresencial,<br>ProgramaVirtual|FabricaMaterial,<br>FabricaCarnetFis<br>ico,<br>FabricaLicencia,<br>FabricaCarnetDi<br>gital|
 
+# Diagrama de clases UML
 
-
+![](/src/main/resources/images/UML.jpg)

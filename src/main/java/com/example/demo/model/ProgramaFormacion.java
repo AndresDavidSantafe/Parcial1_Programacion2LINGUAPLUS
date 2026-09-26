@@ -15,12 +15,15 @@ import java.util.List;
         private final Estado estado;
         private final TipoPrograma tipoPrograma;
 
-
         private final boolean plataforma;
         private final boolean club;
         private final boolean tutor;
 
         private final List<Estudiante> estudiantes;
+
+        // Nuevos atributos provenientes del Abstract Factory
+        private final Material material;
+        private final Carnet carnet;
 
         private ProgramaFormacion(Builder b) {
             this.codigo = b.codigo;
@@ -35,8 +38,10 @@ import java.util.List;
             this.club = b.club;
             this.tutor = b.tutor;
             this.estudiantes = b.estudiantes;
-        }
 
+            this.material = b.material;
+            this.carnet = b.carnet;
+        }
 
         public static class Builder {
             private int codigo;
@@ -48,12 +53,15 @@ import java.util.List;
             private Estado estado;
             private TipoPrograma tipoPrograma;
 
-            // Valores por defecto para los atributos específicos
             private boolean plataforma = false;
             private boolean club = false;
             private boolean tutor = false;
 
             private List<Estudiante> estudiantes = new ArrayList<>();
+
+            // Campos para la integración del Abstract Factory
+            private Material material;
+            private Carnet carnet;
 
             public Builder conCodigo(int c) {
                 this.codigo = c;
@@ -108,6 +116,12 @@ import java.util.List;
                 return this;
             }
 
+            public Builder conFabricaModalidad(AbstractFactory fabrica) {
+                this.material = fabrica.crearMaterial();
+                this.carnet = fabrica.crearCarnet();
+                return this;
+            }
+
             public ProgramaFormacion build() {
                 if (codigo < 0) {
                     throw new IllegalStateException("El código es incorrecto");
@@ -133,10 +147,15 @@ import java.util.List;
                 if (tipoPrograma == null) {
                     throw new IllegalStateException("Falta el tipo de programa");
                 }
+                // Validación para asegurar que se usó la fábrica y se asignaron los productos
+                if (material == null || carnet == null) {
+                    throw new IllegalStateException("Falta definir la fábrica de modalidad para los materiales y carnéts");
+                }
 
                 return new ProgramaFormacion(this);
             }
         }
+
         public int getCodigo() { return codigo; }
         public String getNombre() { return nombre; }
         public String getIdioma() { return idioma; }
@@ -149,5 +168,9 @@ import java.util.List;
         public boolean isClub() { return club; }
         public boolean isTutor() { return tutor; }
         public List<Estudiante> getEstudiantes() { return estudiantes; }
+
+        // Getters para los productos de la fábrica
+        public Material getMaterial() { return material; }
+        public Carnet getCarnet() { return carnet; }
 
     }

@@ -1,6 +1,7 @@
 # Pensamiento computacional Abstraccion 
 
 Integrantes: Juan Diego Quitian Rengifo (C.C.1090275278) – Andres David Santafe Lopez (C.C. 1023378835 )
+
 ¿Que se solicita finalmente? 
 
 Un sistema para La academia LinguaPlus donde le permita gestionar y controlar la información de matrícula de estudiantes y de su plantilla, que permita elegir distintas modalidades y servicios para su aprendizaje, controlar el rol de sus docentes 
